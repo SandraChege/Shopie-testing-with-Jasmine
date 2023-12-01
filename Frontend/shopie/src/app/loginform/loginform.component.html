@@ -1,0 +1,35 @@
+<div class="flex justify-center items-center h-[100vh]">
+    <div class="registerUser" class="w-[30vw] flex flex-col justify-center shadow-md shadow-gray-500 m-4">
+    <h2 class="text-center mb-2 text-[2rem]">Sign in </h2>
+
+    <div *ngIf="showSuccessMessage" class="success-message" data-cy="logged-in-success-popup">
+        <p>User logged in successfully.</p>
+    </div>
+    
+    <div *ngIf="showErrorMessage" class="error-message" data-cy="logged-in-error-popup">
+       <p>User login rejected</p>
+    </div>
+
+    <form [formGroup] = "loginForm" (ngSubmit)="loginUser()" class="flex flex-col my-4 mx-6">
+        <div class="flex flex-col py-1">
+            <label for="" class="text-[1rem]">Email</label>
+            <input data-cy="email" type="email" formControlName="email" placeholder="Enter your email" class="rounded-[5px] border-solid border-[1px] border-gray-500 outline-none px-4 py-[4px] mt-[5px]">
+            <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-red-500">Email is required</div>
+        </div>
+        <div class="flex flex-col py-1">
+            <label for="" class="text-[1rem]">Password</label>
+            <input data-cy="password" type="password" formControlName="password" placeholder="Enter your password" class="rounded-[5px] border-solid border-[1px] border-gray-500 outline-none px-4 py-[4px] mt-[5px]">
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-red-500">Password is required</div>
+        </div>
+        <div class="my-[4px] flex flex-row-reverse">
+            <a routerLink = "/password" data-cy="forgotpassword" class="text-s">Forgot Password</a>
+        </div>
+        <div class="flex flex-col">
+            <input data-cy="login_user_btn" type="submit" value="Login" class="rounded-[2px] border-solid border-[1px] border-[#D03E3B]-100 outline-none px-4 py-[6px] mt-[1rem] hover:cursor-pointer">
+        </div>
+        <div class="my-[4px]">
+            <a routerLink = "/register">Create a new Account</a>
+        </div>
+
+    </form>
+</div>

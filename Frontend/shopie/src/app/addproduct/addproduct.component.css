@@ -1,0 +1,33 @@
+.destinationcontainer {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.addtour {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  /* background-color: brown; */
+  justify-content: center;
+  align-items: center;
+}
+h2{
+    text-align: center;
+    font-size: 2rem;
+}
+.container1 {
+  display: flex;
+  /* width: 80%; */
+  padding: 10px;
+  /* background-color: blue; */
+}
+.container2 {
+  /* background-color: blueviolet; */
+  display: flex;
+  flex-direction: column;
+}
+.container2 input{
+    width: 30vw;
+}

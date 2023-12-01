@@ -1,0 +1,135 @@
+###REGISTER
+POST http://localhost:4500/user/register
+Content-Type: application/json
+
+{
+    "userName":"Emmanuel Kipsang",
+    "email":"Emmanuel.Kipsang@thejitu.com",
+    "password":"12345678",
+    "phone_no":"0711000000"
+}
+
+###login
+POST http://localhost:4500/user/login
+Content-Type: application/json
+
+{
+    "email":"9superbikes@gmail.com",
+    "password":"12345678"
+}
+
+###getallUsers
+GET http://localhost:4500/user/getallusers
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiIxNjQ4ZjkyMi04YWU5LTQzYTctYWVlYS0wYzRmOWE0NzYyNTgiLCJ1c2VyTmFtZSI6IlNhbmRyYSBDaGVnZSIsImVtYWlsIjoiOXN1cGVyYmlrZXNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaXNEZWxldGVkIjpmYWxzZSwiV2VsY29tZWQiOmZhbHNlLCJyZXNldFBhc3N3b3JkIjpmYWxzZSwiaWF0IjoxNzAxMjYzNjY1LCJleHAiOjE3MDEzNTAwNjV9.MsQJ-g6Sxb3o4vvCUsibFhWSdKhgGQHufHDlTIsEfYM
+
+###checkuserdetails
+GET http://localhost:4500/user/checkuserdetails
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiIxNjQ4ZjkyMi04YWU5LTQzYTctYWVlYS0wYzRmOWE0NzYyNTgiLCJ1c2VyTmFtZSI6IlNhbmRyYSBDaGVnZSIsImVtYWlsIjoiOXN1cGVyYmlrZXNAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc0RlbGV0ZWQiOmZhbHNlLCJXZWxjb21lZCI6ZmFsc2UsImlhdCI6MTcwMTA3MjMwOSwiZXhwIjoxNzAxMTU4NzA5fQ.dVf298WLLdkMeNxVbOvfB2rup25orB2Y9_hQSvrwmlo
+
+###getoneuser
+
+POST http://localhost:4500/user/getoneuser
+Content-Type: application/json
+
+{
+    "email": "phillipwaiganjo@gmail.com"
+}
+
+###updateuser
+PUT http://localhost:4500/user/updateuser
+Content-Type: application/json
+
+{
+    "userID":"5d36c3cd-987f-4236-b1b1-538016007e35",
+    "userName": "Francis Chegge",
+    "phone_no": "0710000002"
+}
+
+###deleteoneuser
+DELETE http://localhost:4500/user/deleteuser/5d36c3cd-987f-4236-b1b1-538016007e35
+
+#### forgot password 
+POST http://localhost:4500/user/forgot 
+Content-Type: application/json
+
+{
+"email":"phillipwaiganjo@gmail.com"
+}
+
+###updatepassword
+POST http://localhost:4500/user/resetpassword
+Content-Type: application/json
+
+{
+    "userID": "8e775adc-98fa-4047-9822-7b32fd61a728",
+    "password": "Emmanuel@123"
+}
+
+###ADD PRODUCT
+POST http://localhost:4500/product/add
+Content-Type: application/json
+
+{
+    "title": "LG TV",
+    "price": "40000",
+    "image": "https://ke.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/46/9134721/1.jpg?9196",
+    "category": "Electronic",
+    "description": "Samsung 40T5300 - 40 FULL HD SMART TV, NETFLIX, YOUTUBE",
+    "stock": "15"
+}
+###GET ALL PRODUCTS
+GET http://localhost:4500/product/getallproducts
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiIxNjQ4ZjkyMi04YWU5LTQzYTctYWVlYS0wYzRmOWE0NzYyNTgiLCJ1c2VyTmFtZSI6IlNhbmRyYSBDaGVnZSIsImVtYWlsIjoiOXN1cGVyYmlrZXNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaXNEZWxldGVkIjpmYWxzZSwiV2VsY29tZWQiOmZhbHNlLCJpYXQiOjE3MDExNzI5MzQsImV4cCI6MTcwMTI1OTMzNH0.n8N7Ef7jNp3OxqJFX5rTmoarC8W3Xt9QOkED0SueXrA
+
+###GET SINGLE PRODUCT
+GET http://localhost:4500/product/getoneproduct/3b8bffd5-b11e-4ac8-8210-53c5c93c2f37
+
+###UPDATE PRODUCT
+PUT http://localhost:4500/product/updateproduct
+Content-Type: application/json
+
+{
+    "productID":"3b8bffd5-b11e-4ac8-8210-53c5c93c2f37",
+    "title": "Bluetooth Wireless HeadPhones",
+    "price": "6000",
+    "image": "https://cdn.pixabay.com/photo/2013/07/13/12/17/headphone-159569_640.png",
+    "category": "Electronics",
+    "description": "This are bluetooth wireless headphones",
+    "stock": "15"
+}
+###DELETE PRODUCT
+DELETE http://localhost:4500/product/deleteproduct/3b8bffd5-b11e-4ac8-8210-53c5c93c2f37
+
+###ADD TO CART
+POST http://localhost:4500/order/add
+Content-Type: application/json
+
+{
+    "userID":"8e775adc-98fa-4047-9822-7b32fd61a728",
+    "productID":"bef79d52-c858-46e5-876a-18823254cd5a",
+    "count":"2",
+    "price":"40000"
+}
+
+###GET ALL ORDERS
+GET http://localhost:4500/order/allorders
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiIxNjQ4ZjkyMi04YWU5LTQzYTctYWVlYS0wYzRmOWE0NzYyNTgiLCJ1c2VyTmFtZSI6IlNhbmRyYSBDaGVnZSIsImVtYWlsIjoiOXN1cGVyYmlrZXNAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaXNEZWxldGVkIjpmYWxzZSwiV2VsY29tZWQiOmZhbHNlLCJpYXQiOjE3MDExNzI5MzQsImV4cCI6MTcwMTI1OTMzNH0.n8N7Ef7jNp3OxqJFX5rTmoarC8W3Xt9QOkED0SueXrA
+
+###GET SINGLE ORDER
+GET http://localhost:4500/order/oneorder/c180b5ef-e682-41a0-8a48-eff41c164869
+
+###UPDATE ORDER
+PUT http://localhost:4500/order/updateorder
+Content-Type: application/json
+
+{
+    "productID":"bef79d52-c858-46e5-876a-18823254cd5a",
+    "userID": "8e775adc-98fa-4047-9822-7b32fd61a728",
+    "price": "60000",
+    "count": "3",
+    "orderID": "c180b5ef-e682-41a0-8a48-eff41c164869"
+}
+
+###DELETE ORDER
+DELETE http://localhost:4500/order/deleteorder/c180b5ef-e682-41a0-8a48-eff41c164869
+

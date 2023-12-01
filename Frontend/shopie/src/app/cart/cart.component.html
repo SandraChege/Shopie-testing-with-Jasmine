@@ -1,0 +1,40 @@
+<app-userdashboard></app-userdashboard>
+<div>
+  <div>
+    <button data-cy="clearCart" (click)="clearCart()" class="bg-[#D03E3B] text-white px-4 py-2 rounded-[8px]">Clear Cart</button>
+  </div>
+  <table class="table-auto min-w-full">
+    <thead>
+      <tr>
+        <th class="px-4 py-2">Image</th>
+        <th class="px-4 py-2">Title</th>
+        <th class="px-4 py-2">Quantity</th>
+        <th class="px-4 py-2">Price per item</th>
+        <th class="px-4 py-2">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of cartItems ; let index = index" data-cy="cartItems">
+        <td><img src="{{ product.image }}" alt="{{product.description}}"/></td>
+        <td class="border px-4 py-2"><p>{{ product.title }}</p></td>
+        <td>
+          <div class="flex justify-center items-center">
+            <button class="p-2 bg-[#D03E3B] rounded-[8px] m-2" data-cy="increaseQuantity" (click)="increaseQuantity(index)">+</button>
+            <p class="p-2 m-2">{{ product.quantity }}</p>
+            <button class="p-2 bg-[#D03E3B] rounded-[8px] m-2" data-cy="decreaseQuantity" (click)="decreaseQuantity(index)">-</button>
+          </div>
+        </td>
+        <td class="border px-4 py-2"><p>{{ product.price }}</p></td>
+        <td class="border px-4 py-2"><p>{{ product.quantity * product.price }}</p></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Total price is: <span data-cy="totalPrice">{{ getTotalPrice() }}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

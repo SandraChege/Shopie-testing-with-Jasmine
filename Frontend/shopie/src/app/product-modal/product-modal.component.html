@@ -1,0 +1,13 @@
+<app-admindashboard></app-admindashboard>
+<div class="overlay">
+    <div class="product-modal" *ngFor="let product of viewSingleProduct">
+      <img src="{{ product.image }}" alt="" />
+      <div>
+        <p>{{ product.title }}</p>
+        <p>{{ product.category}}</p>
+        <p> {{ product.description}} </p>
+        <p>{{ product.price}}</p>
+        <p>{{ product.stock}}</p>
+      </div>
+    </div>
+</div>

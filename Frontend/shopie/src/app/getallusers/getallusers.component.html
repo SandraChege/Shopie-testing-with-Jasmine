@@ -1,0 +1,29 @@
+<app-admindashboard></app-admindashboard>
+<div class="flex justify-end p-4 items-center ">
+  <!-- <label for="" class="mx-4" >Search</label> -->
+  <input type="text" data-cy="searchuser" [(ngModel)]="searchtext" name="" id="" placeholder="Search user" class="w-[30vw] p-2 rounded-[10px] outline-none border-[1px] border-solid border-[#D03E3B]">
+</div>
+<div class="overflow-x-auto">
+  <table class="table-auto min-w-full">
+    <thead>
+      <tr>
+        <th class="px-4 py-2">Name</th>
+        <th class="px-4 py-2">Phone Number</th>
+        <th class="px-4 py-2">Email</th>
+        <th class="px-4 py-2"></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr data-cy="user" *ngFor="let user of allUsers | searchuser:searchtext" class="even:bg-gray-100" >
+        <td class="border px-4 py-2">{{ user.userName }}</td>
+        <td class="border px-4 py-2">{{ user.phone_no }}</td>
+        <td class="border px-4 py-2">{{ user.email }}</td>
+        <td class="border px-4 py-2">
+          <button data-cy="deleteUser" class="bg-[#D03E3B] hover:bg-red-700 text-white font-bold py-2 px-4 rounded"  (click)="deleteUser(user.userID)">
+            <a>Delete</a>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

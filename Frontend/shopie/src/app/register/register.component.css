@@ -1,0 +1,14 @@
+input[type=submit]{
+    background-color: #D03E3B;
+}
+.success-message {
+  color: white;
+  font-weight: 500;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: #D03E3B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
