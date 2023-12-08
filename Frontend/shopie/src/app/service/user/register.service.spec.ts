@@ -107,30 +107,30 @@ describe('RegisterService', () => {
     expect(response).toBeDefined();
   }));
 
-  // it('should get single user', () => {
-  //    const mockEmail = 'phillipwaiganjo@gmail.com';
-  //    const mockUserData = {
-  //      userID: '12345-qwertyu-sdfghjk-34567',
-  //      userName: 'Phillip Waiganjo ',
-  //      email: 'phillipwaiganjo@gmail.com',
-  //      phone_no: 725849893,
-  //      password: '$wertyukfnssd',
-  //      role: 'user',
-  //      isDeleted: true,
-  //      Welcomed: true,
-  //      resetPassword: true,
-  //    };
+  it('should get single user', () => {
+     const mockEmail = 'phillipwaiganjo@gmail.com';
+     const mockUserData = {
+       userID: '12345-qwertyu-sdfghjk-34567',
+       userName: 'Phillip Waiganjo ',
+       email: 'phillipwaiganjo@gmail.com',
+       phone_no: 725849893,
+       password: '$wertyukfnssd',
+       role: 'user',
+       isDeleted: true,
+       Welcomed: true,
+       resetPassword: true,
+     };
 
-  //    service.getuser().subscribe((userData) => {
-  //      expect(userData).toEqual(mockUserData);
-  //    });
+     service.getuser().subscribe((userData) => {
+       expect(userData).toEqual(mockUserData);
+     });
 
-  //    const req = httpMock.expectOne('http://localhost:4500/user/getoneuser');
-  //    expect(req.request.method).toBe('POST');
-  //    expect(req.request.body).toEqual({ email: mockEmail });
+     const req = httpMock.expectOne('http://localhost:4500/user/getoneuser');
+     expect(req.request.method).toBe('POST');
+     expect(req.request.body).toEqual({ email: mockEmail });
 
-  //    req.flush(mockUserData);
-  // })
+     req.flush(mockUserData);
+  })
 
   // it('should get users', () => {
   //   const mockUsers = {
